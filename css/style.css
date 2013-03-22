@@ -1,0 +1,57 @@
+body {
+	padding-top: 20px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+#plate {
+	table-layout: fixed;
+}
+.grid-row:hover {
+	background-color: #eee;
+}
+.grid-row-header {
+	font-weight: bold;
+	text-align: center!important;
+}
+.grid-header {
+	text-align: center!important;
+}
+.noborder {
+	background-color:#fff!important;
+	border: 0px solid!important;
+	height:2em!important;
+	width:100%!important;
+	outline: 0; -webkit-box-shadow: none !important; 
+	-moz-box-shadow: none !important; 
+	box-shadow: none !important;
+}
+.noborder:focus {
+	border: 1px solid!important;
+}
+.noborder:hover {
+	background-color: #eee;
+}
+span.grid-align-top-left {
+	font-size: 1ex;
+}
+.input-title {
+	font-size: 1.2em!important;
+	height:2em!important;
+	font-weight: bold;
+	line-height: 2!important;
+}
+.input-cell {
+	font-size: 1.2em!important;
+}
+
+@media print {
+	.noprint,
+	.badge,
+	.removePrint,
+	input.headerinput[value=""]
+	{
+		display: none;
+	}
+	table, table * {
+		background-color: #fff!important;
+		border-collapse: collapse!important;
+	}
+}

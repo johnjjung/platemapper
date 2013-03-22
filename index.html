@@ -1,0 +1,132 @@
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<title>Platemapper</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Le styles -->
+	<link href="css/libs/bootstrap.css" rel="stylesheet">
+	<link href="css/libs/bootstrap-responsive.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]> <script src="js/libs/html5shiv.js"></script> <![endif]-->
+
+	<!-- Fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="ico/favicon.png">
+	<style type="text/css"></style>
+
+	<!-- JS libraries -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+	<script src="js/libs/bootstrap.min.js"></script>
+	<script src="js/libs/underscore-min.js"></script>
+</head>
+
+<body class=" hasGoogleVoiceExt">
+
+	<div class="container">
+		<div class="row-fluid">
+
+			<!-- heading -->
+			<div class="span12 noprint">
+				<h1>Plate Mapper</h1>
+				<p class="lead">A Plate Mapper to help with your experiments.</p>
+			</div>
+
+			<!-- dimensions -->
+			<div class="span5 noprint">
+				<legend>Dimensions</legend>
+				<label class="control-label" for="Ydimension">Y Dimension</label>
+				<input id="Ydimension" style="height: 2.5em;" type="text" placeholder="Number of Columns">
+				<label class="control-label" for="Xdimension">X Dimension</label>
+				<input id="Xdimension" style="height: 2.5em;" type="text" placeholder="Number of Rows">
+			</div>
+
+			<!-- options -->
+			<div class="span5 noprint">
+				<legend>Options</legend>
+				<div class="row-fluid">
+					<ul class="thumbnails">
+						<li class="span6">
+							<a id="1A-config" href="#" class="thumbnail">
+								<img src="img/options/1A-config.jpg" alt="1A">
+							</a>
+						</li>
+						<li class="span6">
+							<a id="A1-config" href="#" class="thumbnail">
+								<img src="img/options/A1-config.jpg" alt="A1">
+							</a>
+						</li>
+					</ul>
+					<ul class="thumbnails">
+						<li class="span6">
+							<a id="num-config" href="#" class="thumbnail">
+								<img src="img/options/num-config.jpg" alt="Numeric">
+							</a>
+						</li>
+						<li class="span6">
+							<a id="free-config" href="#" class="thumbnail">
+								<img src="img/options/free-config.jpg" alt="Free Floating">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="finalize" style="display:none;" class="page-header">
+				<a class="removePrint" href=""><span class="badge">Reset</span></a>
+				<a class="removePrint" id="printf" href="#print"><span class="badge badge-success">Print</span></a>
+				<a class="removePrint" id="edit" href="#edit" style="display:none;"><span class="badge badge-info">Edit</span></a>
+				<h1>
+					<input id="titlePlate" class="headerinput noborder input-title" type="text" placeholder="Click to Enter a Plate Title">
+				</h1>
+				<p><input id="authorPlate" class="headerinput noborder span6" type="text" placeholder="Click Enter the Plate Subtitle"></p>
+			</div>
+					
+			<div id="PlateSection" class="span12" style="display:none;">
+				<table id="plate" class="table table-bordered">
+				</table>
+			</div>
+
+		</div> <!-- /row-fluid -->
+	</div> <!-- /container -->
+
+	<!-- Le javascript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/common/dry.min.js"></script>
+	<script type="text/javascript">
+		// Declare variables
+		var option;
+
+		// Load scripts
+		$.getScript('js/controller/configs.min.js');
+
+		// Dimension
+		$('#Ydimension').keyup(function() {
+			plateTrigger();
+		});
+		$('#Xdimension').keyup(function() {
+			plateTrigger();
+		});
+
+
+		$('.thumbnail').click(function() {
+			fadeAllBut($(this).attr('id'), "thumbnail");
+			option = $(this).attr('id');
+			plateTrigger();
+		});
+
+		$('#printf').click(function() { finalize(); });
+		$('#edit').click(function() { editit(); });
+	</script>
+
+
+</body>
+</html>
