@@ -5,11 +5,13 @@ body {
 	table-layout: fixed;
 }
 .grid-row:hover {
-	background-color: #eee;
+	background-color: paleturquoise!important;
+	cursor: text;
 }
 .grid-row-header {
 	font-weight: bold;
 	text-align: center!important;
+	vertical-align: middle!important;
 }
 .grid-header {
 	text-align: center!important;
@@ -25,9 +27,7 @@ body {
 }
 .noborder:focus {
 	border: 1px solid!important;
-}
-.noborder:hover {
-	background-color: #eee;
+	border-color: paleturquoise!important;
 }
 span.grid-align-top-left {
 	font-size: 1ex;
@@ -40,13 +40,25 @@ span.grid-align-top-left {
 }
 .input-cell {
 	font-size: 1.2em!important;
+	margin: 0px!important;
 }
+.help {
+	cursor: help;
+}
+#minfo {
+	cursor: pointer;
+}
+
+
+/* Print
+-------------------------------------------------- */
 
 @media print {
 	.noprint,
 	.badge,
 	.removePrint,
-	input.headerinput[value=""]
+	input.headerinput[value=""],
+	.footer
 	{
 		display: none;
 	}
@@ -54,4 +66,29 @@ span.grid-align-top-left {
 		background-color: #fff!important;
 		border-collapse: collapse!important;
 	}
+}
+
+/* Footer
+-------------------------------------------------- */
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 10em;
+  border-top: 1px solid #ddd;
+  background-color: #eee;
+}
+.footer p {
+  margin-bottom: 1ex;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  display: inline;
+  padding: 0 15px;
+}
+.footer-links li:first-child {
+  padding-left: 0;
 }

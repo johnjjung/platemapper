@@ -35,22 +35,38 @@
 
 			<!-- heading -->
 			<div class="span12 noprint">
-				<h1>Plate Mapper</h1>
-				<p class="lead">A Plate Mapper to help with your experiments.</p>
+				<h1>Plate Mapper <small>by <a href="http://www.pith-studio.com">Pith Studio</a></small></h1>
+				<p class="lead">Plate Mapper is here to help you lay our your experiments! </p>
+				<div class="well">
+					<p>
+						Plate mapper is a free utility that simply creates a printer friendly plate map for your experiments.
+					</p>
+					<p>
+						Plate mapper is an <a href="https://github.com/johnjjung/platemapper">open project</a> and the code is published. None of your information is transmitted or stored on our servers.
+					</p>
+					<span id="minfo"class="badge badge-inverse">click more info</span>
+					<div id="moreinfo" style="display:none;">
+						<p>Plate mapper is free, and we plan on keeping it free. </p>
+						<p>We've made the plate mapper for mainly for ELISAs, ELISPOTs, etc... but really you can use it for anything on a grid. </p>
+						<p>You can review our terms and conditions <a href="/terms">here</a>. If you're stressed that your experiements aren't working, why don't you take a <a href="https://specitrack.com/bored">break</a>? </p>
+						<p>You can review our privacy policy <a href="/privacy">here</a>. We do not store any information that you input on this site.</p>
+					</div>
+				</div>
+				
 			</div>
 
 			<!-- dimensions -->
 			<div class="span5 noprint">
-				<legend>Dimensions</legend>
+				<legend>Dimensions <a class="help" data-trigger="hover" data-toggle="popover" data-placement="right" title="Enter the total number of wells you have on each row and column." data-original-title=""><i class="icon-question-sign"></i></legend> </a>
 				<label class="control-label" for="Ydimension">Y Dimension</label>
-				<input id="Ydimension" style="height: 2.5em;" type="text" placeholder="Number of Columns">
+				<input id="Ydimension" style="height: 2.5em;" type="text" placeholder="Total Number of Columns">
 				<label class="control-label" for="Xdimension">X Dimension</label>
-				<input id="Xdimension" style="height: 2.5em;" type="text" placeholder="Number of Rows">
+				<input id="Xdimension" style="height: 2.5em;" type="text" placeholder="Total Number of Rows">
 			</div>
 
 			<!-- options -->
 			<div class="span5 noprint">
-				<legend>Options</legend>
+				<legend>Options <a class="help" data-trigger="hover" data-toggle="popover" data-placement="right" title="Click on the layout of your plate. "><i class="icon-question-sign"></i></legend> </a></legend>
 				<div class="row-fluid">
 					<ul class="thumbnails">
 						<li class="span6">
@@ -68,11 +84,6 @@
 						<li class="span6">
 							<a id="num-config" href="#" class="thumbnail">
 								<img src="img/options/num-config.jpg" alt="Numeric">
-							</a>
-						</li>
-						<li class="span6">
-							<a id="free-config" href="#" class="thumbnail">
-								<img src="img/options/free-config.jpg" alt="Free Floating">
 							</a>
 						</li>
 					</ul>
@@ -93,7 +104,7 @@
 				<table id="plate" class="table table-bordered">
 				</table>
 			</div>
-
+			
 		</div> <!-- /row-fluid -->
 	</div> <!-- /container -->
 
@@ -125,8 +136,30 @@
 
 		$('#printf').click(function() { finalize(); });
 		$('#edit').click(function() { editit(); });
+		$('#minfo').click(function () {
+			$('#moreinfo').slideDown('fast');
+			$('#minfo').hide()
+		})
+
+		// popover
+		$('.help').popover();
+
 	</script>
 
 
 </body>
+	<footer class="footer">
+	      <div class="container">
+	        <p>Designed and built by the <a href="http://www.pith-studio.com">Pith Studio</a> Team.</p>
+	        <p>Code and Documentation licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/us/deed.en_US" target="_blank">Creative Commons License</a> CC BY 3.0</a>.</p>
+	        <ul class="footer-links">
+	          <li><a href="http://www.pith-studio.com/#contact">Hire Us</a></li>
+	          <li class="muted">·</li>
+	          <li><a href="https://github.com/johnjjung/platemapper">Code</a></li>
+	          <li class="muted">·</li>
+	          <li><a href="https://github.com/johnjjung/platemapper/issues">Issues</a></li>
+	          <li class="muted">·</li>
+	          <li><a href="http://blog.specitrack.com">Blog</a></li>
+	      </div>
+	    </footer>
 </html>
