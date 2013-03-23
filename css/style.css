@@ -31,6 +31,16 @@ body {
 }
 span.grid-align-top-left {
 	font-size: 1ex;
+	float: left;
+	margin-left: -1ex;
+	margin-top: -1.4ex;
+	font-size: 1.4ex;
+	padding-right: 1ex;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	font-style: italic;
+	font-weight: bold;
+	padding-top: 0px;
 }
 .input-title {
 	font-size: 1.2em!important;
@@ -48,7 +58,10 @@ span.grid-align-top-left {
 #minfo {
 	cursor: pointer;
 }
-
+#madefor {
+	text-align: center;
+	margin-top: 5em;
+}
 
 /* Print
 -------------------------------------------------- */
